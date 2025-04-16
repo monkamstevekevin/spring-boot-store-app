@@ -2,8 +2,29 @@ spring:
   application:
     name: store
   datasource:
-    url: jdbc:mysql://localhost:3306/store_api?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/store1?createDatabaseIfNotExist=true
     username: root
-    password: MyPassword!
+    password: Hodome-51
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
     show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  sql:
+    init:
+      mode: always
+      continue_on_error: false
+
+mail:
+
+
+
+
+
