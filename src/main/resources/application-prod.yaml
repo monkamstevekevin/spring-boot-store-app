@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+
+
+
+
+websiteUrl: http://locahost:4242
+
+
+
+
+
+
+
+
