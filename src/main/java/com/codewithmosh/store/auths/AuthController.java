@@ -47,7 +47,7 @@ public class AuthController {
                                    HttpServletResponse response
     ) {
 
-//        var email = request.getEmail();
+      var email = request.getEmail();
 //        var password = request.getPassword();
 //        var user = userRepository.findByEmail(email);
 //        if (user == null || !passwordEncoder.matches(password, user.getPassword())) {
