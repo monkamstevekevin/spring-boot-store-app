@@ -11,4 +11,3 @@ spring:
 
 server:
   port:    ${PORT:8080}   # Rail­way’s PORT env-var (fallback 8080 locally)
-  address: 0.0.0.0        # bind on every network interface
