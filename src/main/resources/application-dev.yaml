@@ -15,10 +15,6 @@ spring:
         globally_quoted_identifiers: true
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
-  sql:
-    init:
-      mode: always
-      continue_on_error: false
 
 websiteUrl: http://locahost:4242
 
