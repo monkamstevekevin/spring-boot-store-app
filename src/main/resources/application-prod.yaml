@@ -10,4 +10,8 @@ spring:
       ddl-auto: update
 
 server:
-  port: ${PORT:8080}   # Rail­way’s PORT env-var (fallback 8080 locally)
+  port:    ${PORT:8080}
+  address: 0.0.0.0
+
+# ← add this!
+websiteUrl: https://mystore.con
