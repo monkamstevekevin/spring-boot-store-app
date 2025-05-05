@@ -1,20 +1,26 @@
+# Activate only when SPRING_PROFILES_ACTIVE=prod
 spring:
+  profiles: prod
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    # Railway must inject these three as env-vars
+    url:               ${SPRING_DATASOURCE_URL}
+    username:          ${SPRING_DATASOURCE_USERNAME}
+    password:          ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
+  jpa:
+    hibernate:
+      # Create/update your schema; change to 'validate' or 'none' if you prefer
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
 
+# Tell Spring which port to bind to (Railway will inject $PORT)
+server:
+  port:    ${PORT:8080}    # fall back to 8080 when running locally
+  address: 0.0.0.0         # bind to all interfaces inside the container
 
-
-
-websiteUrl: http://mystore.con
-
-
-
-
-
-
-
-
+# (optional) any other prod-only props
+websiteUrl: https://mystore.con
