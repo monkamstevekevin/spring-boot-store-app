@@ -8,21 +8,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
 
+# <<< THIS BLOCK IS REQUIRED >>>
 server:
-  port:    ${PORT:8080}    # bind to Railway’s injected PORT
-  address: 0.0.0.0         # listen on all interfaces
-
-websiteUrl: https://mystore.con
-
-
-
-
-
-
-
-
-
+  port:    ${PORT:8080}   # Railway injects PORT; fallback to 8080 locally
+  address: 0.0.0.0        # bind on all interfaces inside the container
