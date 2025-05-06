@@ -20,7 +20,7 @@ public class UserController {
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
 
-    @GetMapping("")
+    @GetMapping
     public Iterable<UserDto> getAllUsers(@RequestParam(required = false, defaultValue = "", name = "sort") String sort) {
        if( !Set.of("name","email").contains(sort)){
            sort = "name";
@@ -40,7 +40,7 @@ public class UserController {
         }
         return ResponseEntity.ok(userMapper.toDto(user));
     }
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<?> register(
             @Valid @RequestBody RegisterUserDtoRequest request,
                                               UriComponentsBuilder uriBuilder)
