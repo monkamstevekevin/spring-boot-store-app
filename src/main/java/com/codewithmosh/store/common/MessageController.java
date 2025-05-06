@@ -1,4 +1,4 @@
-package com.codewithmosh.store.cotroller;
+package com.codewithmosh.store.common;
 
 import com.codewithmosh.store.entities.Message;
 import org.springframework.web.bind.annotation.RequestMapping;
